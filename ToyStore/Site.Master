@@ -36,59 +36,63 @@
                 <%--Site Scripts--%>
             </Scripts>
         </asp:ScriptManager>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-          <a runat="server" href="~/" class="navbar-brand">
-              <asp:Image ID="Image2" runat="server" ImageUrl="~/Images/logo.jpg" BorderStyle="None" />
-          </a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
+        <div class="container-fluid bg-primary">
+            <div class="container">
+                <nav class="navbar navbar-expand-lg navbar-dark">
+                  <a runat="server" href="~/" class="navbar-brand">Toy Store</a>
+                  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
 
-          <div class="collapse navbar-collapse" id="navbarColor01">
-            <ul class="navbar-nav mr-auto">
-              <li class="nav-item active">
-                <a runat="server" class="nav-link" href="~/">Home <span class="sr-only">(current)</span></a>
-              </li>
-              <li class="nav-item">               
-                <a runat="server"  class="nav-link" href="~/About">About</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" runat="server" href="~/Contact">Contact</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" runat="server" href="~/ProductList">Products</a>
-              </li>
-            </ul>
-             <div class="form-inline my-2 my-lg-0">
-                  <input class="form-control mr-sm-2" type="text" placeholder="Search">
-                  <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+                  <div class="collapse navbar-collapse" id="navbarColor01">
+                    <ul class="navbar-nav mr-auto">
+                      <li class="nav-item active">
+                        <a runat="server" class="nav-link" href="~/">Home <span class="sr-only">(current)</span></a>
+                      </li>
+                      <li class="nav-item">               
+                        <a runat="server"  class="nav-link" href="~/About">About</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" runat="server" href="~/Contact">Contact</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" runat="server" href="~/ProductList">Products</a>
+                      </li>
+                    </ul>
+                     <div class="form-inline my-2 my-lg-0">
+                          <input class="form-control mr-sm-2" type="text" placeholder="Search">
+                          <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+                    </div>
+                     <asp:LoginView runat="server" ViewStateMode="Disabled">
+                        <AnonymousTemplate>
+                            <ul class="nav navbar-nav navbar-right">
+                                <li class="nav-item">
+                                    <a class="nav-link" runat="server" href="~/Account/Register">Register</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" runat="server" href="~/Account/Login">Log in</a>
+                                </li>
+                            </ul>
+                        </AnonymousTemplate>
+                        <LoggedInTemplate>
+                            <ul class="nav navbar-nav navbar-right">
+                                <li class="nav-item">
+                                    <a class="nav-link" runat="server" href="~/Account/Manage" title="Manage your account">Hello, <%: Context.User.Identity.GetUserName()  %> !</a>
+                                </li>
+                                <li class="nav-item">
+                                    <asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="Log off" LogoutPageUrl="~/" OnLoggingOut="Unnamed_LoggingOut" />
+                                </li>
+                            </ul>
+                        </LoggedInTemplate>
+                    </asp:LoginView>            
+                  </div>
+                </nav>
             </div>
-             <asp:LoginView runat="server" ViewStateMode="Disabled">
-                <AnonymousTemplate>
-                    <ul class="nav navbar-nav navbar-right">
-                        <li class="nav-item">
-                            <a class="nav-link" runat="server" href="~/Account/Register">Register</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" runat="server" href="~/Account/Login">Log in</a>
-                        </li>
-                    </ul>
-                </AnonymousTemplate>
-                <LoggedInTemplate>
-                    <ul class="nav navbar-nav navbar-right">
-                        <li class="nav-item">
-                            <a class="nav-link" runat="server" href="~/Account/Manage" title="Manage your account">Hello, <%: Context.User.Identity.GetUserName()  %> !</a>
-                        </li>
-                        <li class="nav-item">
-                            <asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="Log off" LogoutPageUrl="~/" OnLoggingOut="Unnamed_LoggingOut" />
-                        </li>
-                    </ul>
-                </LoggedInTemplate>
-            </asp:LoginView>            
-          </div>
-        </nav>
-  
+        </div>
         <div class="container body-content">
+            <div class="text-center">
+                 <asp:Image ID="Image2" runat="server" ImageUrl="~/Images/logo.jpg" BorderStyle="None" />
+            </div>
             <div id="CategoryMenu" class="text-center mt-2">
 			    <asp:ListView ID="CategoryList" 
                               ItemType="ToyStore.Models.Category" 
