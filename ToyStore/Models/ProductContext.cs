@@ -12,5 +12,7 @@ namespace ToyStore.Models
 		public DbSet<Category> Categories { set; get; }
 
 		public DbSet<Product> Products { set; get; }
+
+		public DbSet<CartItem> CartItems { set; get; }
 	}
 }

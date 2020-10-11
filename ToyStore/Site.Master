@@ -58,6 +58,9 @@
                       <li class="nav-item">
                         <a class="nav-link" runat="server" href="~/ProductList">Products</a>
                       </li>
+                       <li class="nav-item">
+                         <a class="nav-link" runat="server" href="~/Cart" id="cartCount">&nbsp;</a>
+                       </li>
                     </ul>
                      <div class="form-inline my-2 my-lg-0">
                           <input class="form-control mr-sm-2" type="text" placeholder="Search">

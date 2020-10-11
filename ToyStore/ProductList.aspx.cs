@@ -18,6 +18,11 @@ namespace ToyStore
 
 		}
 
+		/* QueryString() as used the this method definition is called a value provider. It is a class of System.Web.ModelBinding.
+		 * The argument ("id") passed to the value provider is called the value provider attribute.
+		 * There are value provider for user inputs suchs as query string, cookies, form values, controls, view state, session state and profile properties,
+		 * You can also write custom value providers.
+		 */
 		public IQueryable<Product> GetProducts([QueryString("id")] int? categoryId)
 		{
 			string CategoryName = "Products";

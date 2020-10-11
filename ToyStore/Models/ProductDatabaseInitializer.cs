@@ -1,11 +1,11 @@
 ﻿using System.Collections.Generic;
 using System.Data.Entity;
-using System.Net.NetworkInformation;
 
 namespace ToyStore.Models
 {
-	public class ProductDatabaseInitializer: DropCreateDatabaseIfModelChanges<ProductContext>
-	{
+    /* Alternatively you can use the base class - DropCreateDatabaseAlways<ProductContext> */
+    public class ProductDatabaseInitializer: DropCreateDatabaseIfModelChanges<ProductContext>
+	{      
 		protected override void Seed(ProductContext context)
 		{
 			GetCategories().ForEach(c => context.Categories.Add(c));

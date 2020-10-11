@@ -11,43 +11,52 @@ namespace ToyStore
 {
 
 
-	public partial class SiteMaster
+	public partial class Cart
 	{
 
 		/// <summary>
-		/// cartCount control.
+		/// CartTitle control.
 		/// </summary>
 		/// <remarks>
 		/// Auto-generated field.
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
-		protected global::System.Web.UI.HtmlControls.HtmlAnchor cartCount;
+		protected global::System.Web.UI.HtmlControls.HtmlGenericControl CartTitle;
 
 		/// <summary>
-		/// Image2 control.
+		/// CartList control.
 		/// </summary>
 		/// <remarks>
 		/// Auto-generated field.
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
-		protected global::System.Web.UI.WebControls.Image Image2;
+		protected global::System.Web.UI.WebControls.GridView CartList;
 
 		/// <summary>
-		/// CategoryList control.
+		/// LabelTotalText control.
 		/// </summary>
 		/// <remarks>
 		/// Auto-generated field.
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
-		protected global::System.Web.UI.WebControls.ListView CategoryList;
+		protected global::System.Web.UI.WebControls.Label LabelTotalText;
 
 		/// <summary>
-		/// MainContent control.
+		/// lblTotal control.
 		/// </summary>
 		/// <remarks>
 		/// Auto-generated field.
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
-		protected global::System.Web.UI.WebControls.ContentPlaceHolder MainContent;
+		protected global::System.Web.UI.WebControls.Label lblTotal;
+
+		/// <summary>
+		/// UpdateBtn control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.Button UpdateBtn;
 	}
 }

@@ -10,6 +10,7 @@ using Microsoft.AspNet.Identity;
 using System.Linq;
 using ToyStore.Models;
 using System.Data.Entity;
+using ToyStore.Logic;
 
 namespace ToyStore
 {
@@ -86,6 +87,15 @@ namespace ToyStore
         {
             Context.GetOwinContext().Authentication.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
         }
+
+        protected void Page_PreRender(object sender, EventArgs e)
+		{
+            using (CartActions usersCart = new CartActions())
+			{
+                string cartStr = string.Format("Cart({0})", usersCart.GetCount());
+                cartCount.InnerText = cartStr;
+			}
+		}
     }
 
 }
