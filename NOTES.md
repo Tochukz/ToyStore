@@ -18,14 +18,14 @@ __Additional Resources__
 
 ## Lesson 3: Create the Data Access Layer
 __Nuget__  
-When you install a `Nuget` package, Nuget copies the files to your project, add a `package` element referencing the t package in the `packages` element of the `packages.config` file.    
+When you install a `Nuget` package, Nuget copies the files to your project, add a `package` element referencing the the package in the `packages` element of the `packages.config` file.    
 It also  adds a `Reference` element to the `ItemGroup` element of the project file (`.csproj`). The `Include` attribute of the reference element specifies the type name of the reference.  
 
 __Creating the Data Models__   
 1. Create the _Entity classes_ or Models
 2. Create the _Context class_, which provides access to the database
 3. Create an _Initializer class_ to seed the database.  
-4. In the _Global.asax_ file, set the initializer object to initialize the database at the _Application_Start_ life cycle method.  
+4. In the _Global.asax_ file, set the initializer object to initialize the database in the _Application_Start_ life cycle method.  
 5. Add a connection string to _Web.config_ file. Although _Entity Framework Code First_ will generate a database for you in a default location, you can take control of where the database is located by adding your own connection string. For example, you can specify that the master data file (`ToyStore.mdf`) should be located in your data directory (_App_data_).  
 6. Build the application   
 7. The Database will be created by _Entity Framework_, based on the models, the first time the application is run.  
@@ -63,3 +63,6 @@ Version can be specified in the `AssemblyInfo.cs` file.  See [Stack Oveflow](htt
 By default a Session states are stored in-process on the web server hosting the web application. The use of Session State stored in-process to store user-specific information may work well for demonstration purposes and for small websites but may have performance implications for larger sites.  For larger websites and sites that run multiple instances, it is recommended to use an external provider such as _Window Azure Cache Service_. The Cache Service provides a distributed caching service that is external to the web site and solves the problem of using in-process session state.  [Learn more](https://docs.microsoft.com/en-us/azure/azure-cache-for-redis/cache-aspnet-session-state-provider)
 
 ## Lesson 7: Checkout and Payment with PayPal
+__Enabling Login from Other Sites Using OAuth and OpenID__  
+When you add __OAuth__ provider _(Facebook, Twitter or Windows Live)_ to your ASP.NET Web Forms application, you must set the application ID (Key) value and an application secret value. You add these values to the _Startup.Auth.cs_ file in your Web Forms application.  Additionally, you must create an application on the external site so that you can get the application keys.     
+For sites that use an _OpenID_ provider _(Google)_, you do not have to create an application on the external site.  

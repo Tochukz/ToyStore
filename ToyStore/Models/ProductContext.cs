@@ -14,5 +14,9 @@ namespace ToyStore.Models
 		public DbSet<Product> Products { set; get; }
 
 		public DbSet<CartItem> CartItems { set; get; }
+
+		public DbSet<Order> Orders { set; get; }
+
+		public DbSet<OrderDetail> OrderDEtails { set; get; }
 	}
 }

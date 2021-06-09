@@ -20,7 +20,7 @@ namespace ToyStore.Models
 }
 
 /* 
- * By convention Entity Framewok Code First expects that the primary key for tha CartItem table will be either CardItemId or ID
+ * By convention Entity Framewok Code First expects that the primary key for tha CartItems table will be either CardItemId or ID
  * The [key] attribute overrides this default behaviour. The Key attribute specifies that the ItemID property is the primary key.
  *
  * The CartId specifies the ID of the user
